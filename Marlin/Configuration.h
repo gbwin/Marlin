@@ -45,7 +45,7 @@
 // See video here : https://www.youtube.com/watch?v=fIl5X2ffdyo
 
 //#define MachineEnder2
-//#define MachineEnder3
+#define MachineEnder3
 //#define MachineEnder5
 //#define MachineMini
 //#define MachineCR10
@@ -58,7 +58,7 @@
 //#define MachineEnder3S1_F4
 //#define MachineEnder3Max
 //#define MachineEnder3Pro422
-//#define MachineEnder3Pro427
+#define MachineEnder3Pro427
 
 //#define PLUS // Adds bltouch, allmetal, bilinear (standard), lerdge, 93 e steps/mm
 
@@ -74,7 +74,7 @@
    E3D Mounting assumes Groovemount
    Creality Mounting assumes bolt-on kit
 */
-//#define HotendStock
+#define HotendStock
 //#define HotendE3D
 //#define HotendMosquito
 
@@ -95,7 +95,7 @@
  //#define EZRstruder
  //#define BondtechBMG
  //#define BondtechLGX
- //#define E3DTitan
+ #define E3DTitan
  //#define E3DHemera
  //#define CrealityTitan
  //#define DDXExtruderKit
@@ -104,7 +104,7 @@
 //Stepper09Deg // 0.9 degree per step motor on the extruder - doubles ESteps
 
  //#define MicroswissDirectDrive
- //#define DirectDrive // Any direct drive extruder, reduces filament change lengths
+ #define DirectDrive // Any direct drive extruder, reduces filament change lengths
 
 /*
    Choose bed type below. If you have an extenrally controlled
@@ -122,10 +122,10 @@
 //#define ABL_EZABL // TH3D EZABL or Any NO Sensor
 //#define ABL_EZABL12MM
 //#define ABL_NCSW //Creality ABL or Any NC Sensor
-//#define ABL_BLTOUCH
+#define ABL_BLTOUCH
 //#define ABL_TOUCH_MI // Uncomment ABL_TOUCH_MI to use Touch-MI sensor by hotends.fr
 
-//#define Creality42XUseZMin // Use ZMin pin for probe on Creality 422 and 427 boards
+#define Creality42XUseZMin // Use ZMin pin for probe on Creality 422 and 427 boards
 
 //#define CREALITY_ABL_MOUNT //Using creality ABL mount
 //#define E3D_DUALFAN_MOUNT // Using HD Modular mount as above with 2 5015 blowers and sensor on the right
@@ -141,7 +141,7 @@
 //#define Big_UI // Lightweight status screen, saves CPU cycles
 
 // CR-6 or Ender touchscreen kit
-//#define MachineEnder3Touchscreen
+#define MachineEnder3Touchscreen
 
 // Ender 3 V2 rotary Dial LCD
 //#define FORCEV2DISPLAY
@@ -194,7 +194,7 @@
 //#define Melzi_To_SBoardUpgrade // Upgrade Melzi board to 10S board
 //#define CrealitySilentBoard // Creality board with TMC2208 Standalone drivers. Disables Linear Advance
 //#define Creality422
-//#define Creality427
+#define Creality427
 //define CR6_452 // Older recalled Creality 452 motherboard
 
 //#define SKR13 // 32 bit board - assumes 2208 drivers
@@ -334,7 +334,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "TinyMachines3D" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "GBwin" // Who made the changes.
 #define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -1732,7 +1732,7 @@
 #define W_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define X_MAX_ENDSTOP_INVERTING false // set to true to invert the logic of the endstop.
 #define Y_MAX_ENDSTOP_INVERTING false // set to true to invert the logic of the endstop.
-#define Z_MAX_ENDSTOP_INVERTING true // set to true to invert the logic of the endstop.
+#define Z_MAX_ENDSTOP_INVERTING false // set to true to invert the logic of the endstop.
 #define I_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define J_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define K_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
@@ -2342,7 +2342,7 @@
 #elif ENABLED(MachineCR10SmartPro)
   #define NOZZLE_TO_PROBE_OFFSET { -30, -40, -1.0 }
 #elif (ENABLED(ABL_BLTOUCH) && ENABLED(HotendStock))
-  #define NOZZLE_TO_PROBE_OFFSET { -41, -8, 0 }
+  #define NOZZLE_TO_PROBE_OFFSET { -39, -11, 0 }
 #elif ((ANY(ABL_EZABL, ABL_NCSW)) && ENABLED(HotendStock))
   #if ENABLED(CREALITY_ABL_MOUNT)
     #define NOZZLE_TO_PROBE_OFFSET { -55, -15, 0 }
@@ -2365,7 +2365,7 @@
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
 #if ENABLED(ABL_BLTOUCH)
-  #define PROBING_MARGIN 3
+  #define PROBING_MARGIN 10
 #else
   #define PROBING_MARGIN 10
 #endif
@@ -2731,8 +2731,8 @@
     #define X_BED_SIZE 230
     #define Y_BED_SIZE 230
     #define Z_MAX_POS 250
-    #define X_MAX_POS 245
-    #define Y_MAX_POS 240
+    #define X_MAX_POS 235
+    #define Y_MAX_POS 235
     #define ClipClearance 15
   #elif ANY(MachineEnder3S1)
     #define X_BED_SIZE 220
@@ -3169,7 +3169,7 @@
   #define GRID_MAX_POINTS_X 3
 #elif ENABLED(MeshStd)
   #if ANY(MachineCR6, MachineEnder3Touchscreen)
-     #define GRID_MAX_POINTS_X 4
+     #define GRID_MAX_POINTS_X 3
   #elif ENABLED(MachineCR6Max)
     #define GRID_MAX_POINTS_X 7
   #elif ENABLED(ABL_UBL)
@@ -3461,7 +3461,7 @@
 //
 #define PREHEAT_1_LABEL       "PLA"
 #define PREHEAT_1_TEMP_HOTEND 180
-#define PREHEAT_1_TEMP_BED     70
+#define PREHEAT_1_TEMP_BED     60
 #define PREHEAT_1_TEMP_CHAMBER 35
 #define PREHEAT_1_FAN_SPEED     0 // Value from 0 to 255
 
@@ -3470,6 +3470,12 @@
 #define PREHEAT_2_TEMP_BED    110
 #define PREHEAT_2_TEMP_CHAMBER 35
 #define PREHEAT_2_FAN_SPEED     0 // Value from 0 to 255
+
+#define PREHEAT_3_LABEL       "FIRAFLEX"
+#define PREHEAT_3_TEMP_HOTEND 235
+#define PREHEAT_3_TEMP_BED     60
+#define PREHEAT_3_TEMP_CHAMBER 35
+#define PREHEAT_3_FAN_SPEED     0 // Value from 0 to 255
 
 /**
  * Nozzle Park
@@ -3701,7 +3707,7 @@
  *
  * :{ 'en':'English', 'an':'Aragonese', 'bg':'Bulgarian', 'ca':'Catalan', 'cz':'Czech', 'da':'Danish', 'de':'German', 'el':'Greek (Greece)', 'el_CY':'Greek (Cyprus)', 'es':'Spanish', 'eu':'Basque-Euskera', 'fi':'Finnish', 'fr':'French', 'gl':'Galician', 'hr':'Croatian', 'hu':'Hungarian', 'it':'Italian', 'jp_kana':'Japanese', 'ko_KR':'Korean (South Korea)', 'nl':'Dutch', 'pl':'Polish', 'pt':'Portuguese', 'pt_br':'Portuguese (Brazilian)', 'ro':'Romanian', 'ru':'Russian', 'sk':'Slovak', 'sv':'Swedish', 'tr':'Turkish', 'uk':'Ukrainian', 'vi':'Vietnamese', 'zh_CN':'Chinese (Simplified)', 'zh_TW':'Chinese (Traditional)' }
  */
-#define LCD_LANGUAGE en
+#define LCD_LANGUAGE fr
 
 /**
  * LCD Character Set
@@ -3725,7 +3731,7 @@
  *
  * :['JAPANESE', 'WESTERN', 'CYRILLIC']
  */
-#define DISPLAY_CHARSET_HD44780 JAPANESE
+#define DISPLAY_CHARSET_HD44780 WESTERN
 
 /**
  * Info Screen Style (0:Classic, 1:Průša)

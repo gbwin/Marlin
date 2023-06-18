@@ -28,7 +28,7 @@
 /**
  * Marlin release version identifier
  */
-#define SHORT_BUILD_VERSION "DW7.4.6"
+#define SHORT_BUILD_VERSION "DW7.4.6a"
 
 /**
  * Verbose version identifier which should contain a reference to the location
@@ -131,7 +131,7 @@
  * here we define this default string as the date where the latest release
  * version was tagged.
  */
-#define STRING_DISTRIBUTION_DATE "2022-04-03"
+#define STRING_DISTRIBUTION_DATE "2023-04-08"
 
 /**
  * Defines a generic printer name to be output to the LCD after booting Marlin.
@@ -219,7 +219,7 @@
  * The WEBSITE_URL is the location where users can get more information such as
  * documentation about a specific Marlin release.
  */
-#define WEBSITE_URL "https://www.amazon.com/s?k=F1RST+LAYER"
+#define WEBSITE_URL "7.4.6b"
 
 /**
  * Set the vendor info the serial USB interface, if changable
